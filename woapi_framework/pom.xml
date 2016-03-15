@@ -1,0 +1,221 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>com.willen.openapi</groupId>
+  <artifactId>woapi-framework</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <packaging>jar</packaging>
+
+  <name>woapi-framework</name>
+  <url>http://maven.apache.org</url>
+
+  <properties>
+    <!-- dependencies plugin ver-->
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+     <java.version>1.8</java.version>
+     
+     <junit.version>3.8.1</junit.version>
+  
+    <org.slf4j-version>1.6.6</org.slf4j-version>
+    
+    <servlet.version>3.1.0</servlet.version>
+    
+    <org.springframework-version>4.2.0.RELEASE</org.springframework-version>
+    
+    <jackson.version>2.5.3</jackson.version>
+    
+    <mysql-connector-java.version>5.1.35</mysql-connector-java.version>
+    <mybatis.version>3.3.0</mybatis.version>
+    <mybatis-spring.version>1.2.2</mybatis-spring.version>
+    
+    <commons-lang.version>3.4</commons-lang.version>
+    <commons-collections.version>4.0</commons-collections.version>
+    <commons-dbcp.version>2.1</commons-dbcp.version>
+    <commons-codec.version>1.10</commons-codec.version>
+    
+    <aspectj.version>1.8.6</aspectj.version>
+    
+    <!-- build plugin ver-->
+    <maven-eclipse-plugin.version>2.9</maven-eclipse-plugin.version>
+    <maven-compiler-plugin.version>3.3</maven-compiler-plugin.version>
+    <maven-surefire-plugin.version>2.18.1</maven-surefire-plugin.version>
+    <maven-war-plugin.version>2.6</maven-war-plugin.version>
+    <maven-source-plugin.version>2.4</maven-source-plugin.version>
+    <maven-javadoc-plugin.version>2.10.3</maven-javadoc-plugin.version>
+  </properties>
+
+  <dependencies>
+    <!-- 0.JUnit -->
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>${junit.version}</version>
+      <scope>test</scope>
+    </dependency>
+    <!-- 1.SLF4J -->
+    <dependency>  
+        <groupId>org.slf4j</groupId>  
+        <artifactId>slf4j-log4j12</artifactId>  
+        <version>${org.slf4j-version}</version>  
+    </dependency>  
+    <!-- 2.Servlet -->
+	<dependency>
+		<groupId>javax.servlet</groupId>
+		<artifactId>javax.servlet-api</artifactId>
+		<version>${servlet.version}</version>
+		<scope>provided</scope>
+	</dependency>
+    <!-- 3.Spring -->
+    <!-- 3.1.Spring JDBC -->
+    <dependency>  
+        <groupId>org.springframework</groupId>  
+        <artifactId>spring-jdbc</artifactId>  
+        <version>${org.springframework-version}</version>  
+    </dependency> 
+     <!-- Spring Web -->
+    <dependency>
+        <groupId>org.springframework</groupId>
+        <artifactId>spring-web</artifactId>
+        <version>${org.springframework-version}</version>
+    </dependency>
+    <!-- Spring WEBMVC -->
+    <dependency>
+        <groupId>org.springframework</groupId>
+        <artifactId>spring-webmvc</artifactId>
+        <version>${org.springframework-version}</version>
+    </dependency>
+    <!-- Spring AOP -->
+    <dependency>
+        <groupId>org.springframework</groupId>
+        <artifactId>spring-aop</artifactId>
+        <version>${org.springframework-version}</version>
+    </dependency>
+        
+   <!-- 4.Jackson -->
+    <dependency>
+        <groupId>com.fasterxml.jackson.core</groupId>
+        <artifactId>jackson-databind</artifactId>
+        <version>${jackson.version}</version>
+    </dependency>
+    <!-- 5.DB -->
+    <!-- 5.1.MySQL -->
+    <dependency>
+        <groupId>mysql</groupId>
+        <artifactId>mysql-connector-java</artifactId>
+        <version>${mysql-connector-java.version}</version>
+        <scope>runtime</scope>
+    </dependency>
+        
+    <!-- 5.2.MyBatis -->
+    <dependency>
+        <groupId>org.mybatis</groupId>
+        <artifactId>mybatis</artifactId>
+        <version>${mybatis.version}</version>
+    </dependency>
+    <dependency>
+            <groupId>org.mybatis</groupId>
+            <artifactId>mybatis-spring</artifactId>
+            <version>${mybatis-spring.version}</version>
+     </dependency> 
+     <!-- 6.Commons -->  
+     <!-- 6.1.Commons Lang -->
+     <dependency>
+         <groupId>org.apache.commons</groupId>
+         <artifactId>commons-lang3</artifactId>
+         <version>${commons-lang.version}</version>
+     </dependency>
+     <!-- Commons Collections -->
+     <dependency>
+         <groupId>org.apache.commons</groupId>
+         <artifactId>commons-collections4</artifactId>
+         <version>${commons-collections.version}</version>
+     </dependency>
+     <!-- Commons DBCP 配置数据库-->
+     <dependency>
+         <groupId>org.apache.commons</groupId>
+         <artifactId>commons-dbcp2</artifactId>
+         <version>${commons-dbcp.version}</version>
+     </dependency>
+     <dependency>
+         <groupId>commons-codec</groupId>
+         <artifactId>commons-codec</artifactId>
+         <version>${commons-codec.version}</version>
+     </dependency> 
+     
+     <!-- 7.AspectJ AOP-->
+     <dependency>
+         <groupId>org.aspectj</groupId>
+         <artifactId>aspectjrt</artifactId>
+         <version>${aspectj.version}</version>
+     </dependency>
+     <dependency>
+         <groupId>org.aspectj</groupId>
+         <artifactId>aspectjweaver</artifactId>
+         <version>${aspectj.version}</version>
+         <scope>runtime</scope>
+     </dependency>
+     
+  </dependencies>
+  
+  <build>
+  	<plugins>
+  		<plugin>
+          <artifactId>maven-eclipse-plugin</artifactId>
+          <version>${maven-eclipse-plugin.version}</version>
+          <configuration>
+              <additionalProjectnatures>
+                  <projectnature>org.springframework.ide.eclipse.core.springnature</projectnature>
+              </additionalProjectnatures>
+              <additionalBuildcommands>
+                  <buildcommand>org.springframework.ide.eclipse.core.springbuilder</buildcommand>
+              </additionalBuildcommands>
+              <downloadSources>true</downloadSources>
+              <downloadJavadocs>true</downloadJavadocs>
+          </configuration>
+         </plugin>
+         
+         <!-- Compile Plugin -->
+         <plugin>
+             <groupId>org.apache.maven.plugins</groupId>
+             <artifactId>maven-compiler-plugin</artifactId>
+             <version>${maven-compiler-plugin.version}</version>
+             <configuration>
+                 <source>${java.version}</source>
+                 <target>${java.version}</target>
+                 <encoding>${project.build.sourceEncoding}</encoding>
+                 <showWarnings>true</showWarnings>
+                 <showDeprecation>true</showDeprecation>
+             </configuration>
+         </plugin>
+         <!-- Source Plugin -->
+         <plugin>
+             <groupId>org.apache.maven.plugins</groupId>
+             <artifactId>maven-source-plugin</artifactId>
+             <version>${maven-source-plugin.version}</version>
+             <executions>
+                 <execution>
+                     <phase>deploy</phase>
+                     <goals>
+                         <goal>jar</goal>
+                     </goals>
+                 </execution>
+             </executions>
+         </plugin>
+         <!-- Javadoc Plugin -->
+         <plugin>
+             <groupId>org.apache.maven.plugins</groupId>
+             <artifactId>maven-javadoc-plugin</artifactId>
+             <version>${maven-javadoc-plugin.version}</version>
+             <executions>
+                 <execution>
+                     <phase>deploy</phase>
+                     <goals>
+                         <goal>jar</goal>
+                     </goals>
+                 </execution>
+             </executions>
+         </plugin>
+    </plugins>
+  </build>
+</project>

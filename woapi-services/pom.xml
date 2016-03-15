@@ -1,0 +1,147 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>com.willen.openapi</groupId>
+  <artifactId>woapi-services</artifactId>
+  <version>1.0.0</version>
+  <packaging>war</packaging>
+
+  <name>woapi-services</name>
+
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <java.version>1.8</java.version>
+    <junit.version>4.12</junit.version>
+    <slf4j.version>1.7.12</slf4j.version>
+    <servlet.version>3.1.0</servlet.version>
+    <spring.version>4.2.0.RELEASE</spring.version>
+    <maven-compiler-plugin.version>3.3</maven-compiler-plugin.version>
+    <maven-surefire-plugin.version>2.18.1</maven-surefire-plugin.version>
+    <maven-war-plugin.version>2.6</maven-war-plugin.version>
+  </properties>
+
+  <dependencies>
+    <!-- JUnit -->
+    <dependency>
+        <groupId>junit</groupId>
+        <artifactId>junit</artifactId>
+        <version>${junit.version}</version>
+        <scope>test</scope>
+    </dependency>
+    <!-- SLF4J -->
+    <dependency>
+        <groupId>org.slf4j</groupId>
+        <artifactId>slf4j-log4j12</artifactId>
+        <version>${slf4j.version}</version>
+    </dependency>
+    <!-- Servlet -->
+    <dependency>
+        <groupId>javax.servlet</groupId>
+        <artifactId>javax.servlet-api</artifactId>
+        <version>${servlet.version}</version>
+        <scope>provided</scope>
+    </dependency>
+    <!-- Spring Test -->
+    <dependency>
+        <groupId>org.springframework</groupId>
+        <artifactId>spring-test</artifactId>
+        <version>${spring.version}</version>
+        <scope>test</scope>
+    </dependency>
+    <!-- API Framework -->
+    <dependency>
+        <groupId>com.xxx.api</groupId>
+        <artifactId>api-framework</artifactId>
+        <version>1.0.0</version>
+    </dependency>
+  </dependencies>
+  
+   <build>
+        <resources>
+            <!-- Resource Filter -->
+            <resource>
+                <directory>src/main/resources</directory>
+                <filtering>true</filtering>
+            </resource>
+        </resources>
+        <plugins>
+            <!-- Compile Plugin -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>${maven-compiler-plugin.version}</version>
+                <configuration>
+                    <source>${java.version}</source>
+                    <target>${java.version}</target>
+                    <encoding>${project.build.sourceEncoding}</encoding>
+                </configuration>
+            </plugin>
+            <!-- Test Plugin -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>${maven-surefire-plugin.version}</version>
+                <configuration>
+                    <skipTests>true</skipTests>
+                </configuration>
+            </plugin>
+            <!-- War Plugin -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-war-plugin</artifactId>
+                <version>${maven-war-plugin.version}</version>
+                <configuration>
+                    <warName>woapi</warName>
+                </configuration>
+            </plugin>
+            
+        </plugins>
+    </build>
+  
+  <profiles>
+        <profile>
+            <id>dev</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+            <properties>
+                <maven.jdbc.host>115.29.151.158</maven.jdbc.host>
+                <maven.jdbc.port>3306</maven.jdbc.port>
+                <maven.jdbc.db>mytrade</maven.jdbc.db>
+                <maven.jdbc.username>mytrade</maven.jdbc.username>
+                <maven.jdbc.password>a123456a</maven.jdbc.password>
+                <maven.redis.host>115.29.151.158</maven.redis.host>
+                <maven.redis.port>6379</maven.redis.port>
+                <maven.redis.password>123456</maven.redis.password>
+            </properties>
+        </profile>
+        <profile>
+            <id>test</id>
+            <properties>
+                <maven.jdbc.host>xxx.xxx.xxx.xxx</maven.jdbc.host>
+                <maven.jdbc.port>xxx</maven.jdbc.port>
+                <maven.jdbc.db>xxx</maven.jdbc.db>
+                <maven.jdbc.username>xxx</maven.jdbc.username>
+                <maven.jdbc.password>xxx</maven.jdbc.password>
+                <maven.redis.host>xxx</maven.redis.host>
+                <maven.redis.port>xxx</maven.redis.port>
+                <maven.redis.password>xxx</maven.redis.password>
+            </properties>
+        </profile>
+        <profile>
+            <id>prod</id>
+            <properties>
+                <maven.jdbc.host>xxx.xxx.xxx.xxx</maven.jdbc.host>
+                <maven.jdbc.port>xxx</maven.jdbc.port>
+                <maven.jdbc.db>xxx</maven.jdbc.db>
+                <maven.jdbc.username>xxx</maven.jdbc.username>
+                <maven.jdbc.password>xxx</maven.jdbc.password>
+                <maven.redis.host>xxx</maven.redis.host>
+                <maven.redis.port>xxx</maven.redis.port>
+                <maven.redis.password>xxx</maven.redis.password>
+            </properties>
+        </profile>
+    </profiles>
+  <description>http://maven.apache.org</description>
+</project>
