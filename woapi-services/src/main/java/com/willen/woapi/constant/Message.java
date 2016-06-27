@@ -3,8 +3,8 @@ package com.willen.woapi.constant;
 /**
  * 消息代码
  *
- * @author huangyong
- * @since 1.0.0
+ * @author willen
+ *
  */
 public interface Message {
 

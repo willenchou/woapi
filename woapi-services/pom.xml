@@ -19,6 +19,7 @@
     <maven-compiler-plugin.version>3.3</maven-compiler-plugin.version>
     <maven-surefire-plugin.version>2.18.1</maven-surefire-plugin.version>
     <maven-war-plugin.version>2.6</maven-war-plugin.version>
+    <woapi-framework.version>1.0.0</woapi-framework.version>
   </properties>
 
   <dependencies>
@@ -49,11 +50,12 @@
         <version>${spring.version}</version>
         <scope>test</scope>
     </dependency>
-    <!-- API Framework -->
+    
+    <!-- WOAPI Framework -->
     <dependency>
-        <groupId>com.xxx.api</groupId>
-        <artifactId>api-framework</artifactId>
-        <version>1.0.0</version>
+        <groupId>com.willen.openapi</groupId>
+        <artifactId>woapi-framework</artifactId>
+        <version>${woapi-framework.version}</version>
     </dependency>
   </dependencies>
   
@@ -108,7 +110,7 @@
             <properties>
                 <maven.jdbc.host>115.29.151.158</maven.jdbc.host>
                 <maven.jdbc.port>3306</maven.jdbc.port>
-                <maven.jdbc.db>mytrade</maven.jdbc.db>
+                <maven.jdbc.db>user</maven.jdbc.db>
                 <maven.jdbc.username>mytrade</maven.jdbc.username>
                 <maven.jdbc.password>a123456a</maven.jdbc.password>
                 <maven.redis.host>115.29.151.158</maven.redis.host>

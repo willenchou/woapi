@@ -25,10 +25,11 @@
 
     <tx:annotation-driven/>
 
-    <bean id="dataAccessor" class="com.xxx.api.jdbc.dao.impl.DefaultDataAccessor">
+    <bean id="dataAccessor" class="com.willen.openapi.jdbc.dao.impl.DefaultDataAccessor">
         <property name="sqlSession" ref="sqlSession"/>
     </bean>
-
-    <bean id="idGenerator" class="com.xxx.api.jdbc.id.impl.DefaultIdGenerator"/>
+    
+    <bean id="idGenerator" class="com.willen.openapi.jdbc.id.impl.DefaultIdGenerator"/>
+    
 
 </beans>

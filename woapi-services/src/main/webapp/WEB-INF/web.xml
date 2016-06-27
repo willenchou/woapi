@@ -20,12 +20,12 @@
         </param-value>
   </context-param>
   <!-- 2. filter and it's mappings -->
-  <!--filter>
+  <filter>
         <filter-name>corsFilter</filter-name>
-        <filter-class>com.xxx.api.cors.CorsFilter</filter-class>
+        <filter-class>com.willen.openapi.web.cors.CorsFilter</filter-class>
         <init-param>
             <param-name>allowOrigin</param-name>
-            <param-value>http://localhost:8082</param-value>
+            <param-value>*</param-value>
         </init-param>
         <init-param>
             <param-name>allowMethods</param-name>
@@ -43,11 +43,11 @@
     <filter-mapping>
         <filter-name>corsFilter</filter-name>
         <url-pattern>/*</url-pattern>
-    </filter-mapping-->
+    </filter-mapping>
 
     <filter>
         <filter-name>webContextFilter</filter-name>
-        <filter-class>com.xxx.api.web.WebContextFilter</filter-class>
+        <filter-class>com.willen.openapi.web.WebContextFilter</filter-class>
     </filter>
     <filter-mapping>
         <filter-name>webContextFilter</filter-name>

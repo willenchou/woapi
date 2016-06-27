@@ -13,10 +13,11 @@
        http://www.springframework.org/schema/aop
        http://www.springframework.org/schema/aop/spring-aop.xsd">
 
-    <context:component-scan base-package="com.xxx.api.advice"/>
+    <context:component-scan base-package="com.willen.openapi.advice"/>
     <context:component-scan base-package="com.willen.woapi.controller"/>
+    <context:component-scan base-package="com.willen.woapi.login"/>
 
-    <bean id="objectMapper" class="com.xxx.api.json.CustomObjectMapper" init-method="init">
+    <bean id="objectMapper" class="com.willen.openapi.json.RESTObjectMapper" init-method="init">
         <property name="camelCaseToLowerCaseWithUnderscores" value="true"/>
         <property name="dateFormatPattern" value="yyyy-MM-dd HH:mm:ss"/>
     </bean>
@@ -35,7 +36,7 @@
     <mvc:interceptors>
         <mvc:interceptor>
             <mvc:mapping path="/**"/>
-            <bean id="securityInterceptor" class="com.xxx.security.SecurityInterceptor">
+            <bean id="securityInterceptor" class="com.willen.openapi.security.SecurityInterceptor">
                 <property name="tokenManager" ref="tokenManager"/>
                 <property name="tokenName" value="X-Token"/>
             </bean>
@@ -45,7 +46,7 @@
 
     <bean class="org.springframework.validation.beanvalidation.MethodValidationPostProcessor"/>
 
-    <bean id="tokenManager" class="com.xxx.api.security.impl.DefaultTokenManager"/>
+    <bean id="tokenManager" class="com.willen.openapi.security.impl.DefaultTokenManager"/>
     <!--
     <bean id="tokenManager" class="com.xxx.security.impl.RedisTokenManager">
         <property name="jedisPool" ref="jedisPool"/>
@@ -54,7 +55,7 @@
     </bean>
     -->
 
-    <bean id="securityAspect" class="com.xxx.api.security.SecurityAspect">
+    <bean id="securityAspect" class="com.willen.openapi.security.SecurityAspect">
         <property name="tokenManager" ref="tokenManager"/>
         <property name="tokenName" value="X-Token"/>
     </bean>

@@ -1,12 +1,12 @@
 package com.willen.woapi.param;
 
-import com.xxx.api.validation.NotEmpty;
+import com.willen.openapi.validation.NotEmpty;
 
 /**
- * 广告主参数对�?
+ * 广告主参数对�?
  *
- * @author huangyong
- * @since 1.0.0
+ * @author willen
+ *
  */
 public class AdvertiserParam {
 

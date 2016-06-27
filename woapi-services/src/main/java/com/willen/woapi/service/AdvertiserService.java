@@ -1,10 +1,10 @@
 package com.willen.woapi.service;
 
-import com.xxx.api.jdbc.ServiceException;
-import com.xxx.api.jdbc.dao.DataAccessor;
-import com.xxx.api.jdbc.id.IdGenerator;
-import com.xxx.api.jdbc.paging.Paging;
-import com.xxx.api.util.DateUtil;
+import com.willen.openapi.jdbc.ServiceException;
+import com.willen.openapi.jdbc.dao.DataAccessor;
+import com.willen.openapi.jdbc.id.IdGenerator;
+import com.willen.openapi.jdbc.page.Paging;
+import com.willen.openapi.util.DateUtil;
 import com.willen.woapi.constant.Message;
 import com.willen.woapi.result.AdvertiserResult;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,10 +15,10 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * 广告主服�?
+ * 广告主服�?
  *
- * @author huangyong
- * @since 1.0.0
+ * @author willen
+ *
  */
 @Service
 public class AdvertiserService {

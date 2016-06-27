@@ -1,9 +1,9 @@
 package com.willen.woapi.controller;
 
-import com.xxx.api.bean.PagingParam;
-import com.xxx.api.bean.PagingResult;
-import com.xxx.api.bean.Response;
-import com.xxx.api.jdbc.paging.Paging;
+import com.willen.openapi.model.PagingParam;
+import com.willen.openapi.model.PagingResult;
+import com.willen.openapi.model.Response;
+import com.willen.openapi.jdbc.page.Paging;
 import com.willen.woapi.param.AdvertiserParam;
 import com.willen.woapi.result.AdvertiserResult;
 import com.willen.woapi.service.AdvertiserService;
@@ -13,12 +13,12 @@ import org.springframework.web.bind.annotation.*;
 import javax.validation.Valid;
 
 /**
- * 广告主控制器
+ * 控制器
  *
- * @author huangyong
- * @since 1.0.0
+ * @author willen
+ *
  */
-@RestController
+@RestController //该注解进行对象与JASON 数据格式的序列化与反序列化
 public class AdvertiserController {
 
     @Autowired

@@ -4,10 +4,10 @@ import java.io.Serializable;
 import java.util.Date;
 
 /**
- * 广告主结果对�?
+ * 广告主结果对象
  *
- * @author huangyong
- * @since 1.0.0
+ * @author willen
+ *
  */
 public class AdvertiserResult implements Serializable {
 

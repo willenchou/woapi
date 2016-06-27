@@ -11,7 +11,7 @@
     
     <!-- sql interceptor <paging><分页拦截器> -->
     <plugins>
-        <plugin interceptor="com.xxx.api.jdbc.paging.MySQLPagingInterceptor">
+        <plugin interceptor="com.willen.openapi.jdbc.page.MySQLPagingInterceptor">
             <property name="paging" value="Paging"/>
         </plugin>
     </plugins>
