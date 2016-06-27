@@ -19,6 +19,8 @@ import java.util.Properties;
 
 /**
  *
+ * @author willen
+ *
  */
 public abstract class AbstractPagingInterceptor implements Interceptor {
 

@@ -5,6 +5,8 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 
 /*分页查询
+ *
+ * @author willen
  * 
  */
 public class Paging<T> {

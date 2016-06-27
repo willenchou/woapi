@@ -4,6 +4,13 @@ import java.util.List;
 
 import com.willen.openapi.jdbc.page.Paging;
 
+/**
+ * 分页结果集
+ *
+ * @author willen
+ *
+ */
+
 public class PagingResult<T> {
 
     private List<T> rows;

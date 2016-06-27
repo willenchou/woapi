@@ -5,8 +5,8 @@ import com.willen.openapi.util.StringUtil;
 /**
  * 分页参数对象
  *
- * @author huangyong
- * @since 1.0.0
+ * @author willen
+ *
  */
 public class PagingParam {
 

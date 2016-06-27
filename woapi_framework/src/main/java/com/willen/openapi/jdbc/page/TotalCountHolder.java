@@ -3,8 +3,8 @@ package com.willen.openapi.jdbc.page;
 /**
  * 使每个线程拥有自己的 totalCount 变量
  *
- * @author huangyong
- * @since 1.0.0
+ * @author willen
+ *
  */
 public class TotalCountHolder {
 

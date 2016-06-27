@@ -8,7 +8,9 @@ import org.apache.ibatis.session.RowBounds;
 import java.sql.Connection;
 
 /*mysql mybatis 分页拦截器实现
- * 
+ *
+ * @author willen
+ *
  */
 @Intercepts(
     @Signature(type = StatementHandler.class, method = "prepare", args = {Connection.class})

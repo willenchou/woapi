@@ -1,6 +1,11 @@
 package com.willen.openapi.model;
 
-
+/**
+ * http应答格式
+ *
+ * @author willen
+ *
+ */
 public class Response {
 	
 	 private static final String OK = "ok";
